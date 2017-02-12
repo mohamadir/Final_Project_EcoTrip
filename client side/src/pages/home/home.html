@@ -1,0 +1,150 @@
+
+
+<ion-content padding-bottom class="home common-bg">
+
+  <div class="header rlt">
+    <div class="align-bottom" padding>
+      <div class="pull-left">
+        <h2 color="white">
+          <ion-icon name="ios-navigate-outline"></ion-icon>
+         ECOTRIP
+        </h2>
+        <span color="light" >
+         <strong > יום {{day}} כיפי</strong>  
+      </span>
+      </div>
+      <div class="pull-right">
+        <h1>
+          <ion-icon name="ios-sunny-outline" color="light"></ion-icon>
+        </h1>
+        <h6 no-margin color="light">
+          35<sup>o</sup>C
+        </h6>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <!--list of restaurants-->
+  <div class="block" margin-top>
+    <div class="block-title" padding-left padding-right>
+      <div class="pull-left">
+        <ion-icon name="restaurant" color="restaurant-color"></ion-icon>
+        <span color="restaurant-color">מסעדות מומלצות</span>
+      </div>
+      <div class="pull-right">
+        <span color="restaurant-color" (click)="viewAllRestaurants()">ראה הכל &gt;</span>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="items" padding-left padding-bottom>
+      <div class="card round" *ngFor="let restaurant of restaurants" (click)="viewRestaurant(restaurant.id)">
+        <div class="card-header" [ngStyle]="{'background-image': 'url(' + restaurant.thumb + ')'}"></div>
+        <div class="padding-xs">
+          <h5>{{ restaurant.name }}</h5>
+          <div class="rating">
+            <ion-icon name="md-star" color="restaurant-color" *ngFor="let star of range(restaurant.rating)"></ion-icon>
+            <ion-icon name="md-star" color="gray" *ngFor="let star of range(5 - restaurant.rating)"></ion-icon>
+            <span color="gray">{{ restaurant.reviews.length }} reviews</span>
+          </div>
+          <span color="gray">Recommended for:</span>
+          <div>
+            <div class="pull-left">
+              <span color="restaurant-color">{{ restaurant.scores[0].name }},</span>
+              <span color="restaurant-color">{{ restaurant.scores[1].name }}</span>
+            </div>
+            <div class="pull-right">
+              {{ restaurant.location.distance }} km
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--list of hotels-->
+  <div class="block">
+    <div class="block-title" padding-left padding-right>
+      <div class="pull-left">
+        <ion-icon name="home" color="hotel-color"></ion-icon>
+        <span color="hotel-color">מלונות בארץ</span>
+      </div>
+      <div class="pull-right">
+        <span color="hotel-color" (click)="viewAllHotels()">ראה עוד &gt;</span>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="items" padding-left padding-bottom>
+      <div class="card round" *ngFor="let hotel of hotels" (click)="viewHotel(hotel.id)">
+        <div class="card-header" [ngStyle]="{'background-image': 'url(' + hotel.thumb + ')'}"></div>
+        <div class="padding-xs">
+          <h5>{{ hotel.name }}</h5>
+          <div class="rating">
+            <ion-icon name="md-star" color="restaurant-color" *ngFor="let star of range(hotel.rating)"></ion-icon>
+            <ion-icon name="md-star" color="gray" *ngFor="let star of range(5 - hotel.rating)"></ion-icon>
+            <span color="gray">{{ hotel.reviews.length }} ביקורות</span>
+          </div>
+          <span color="gray">מומלץ עבור:</span>
+          <div>
+            <div class="pull-left">
+              <span color="restaurant-color">{{ hotel.scores[0].name }},</span>
+              <span color="restaurant-color">{{ hotel.scores[1].name }}</span>
+            </div>
+            <div class="pull-right">
+              {{ hotel.location.distance }} ק"מ
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--list of hotels-->
+  <div class="block">
+    <div class="block-title" padding-left padding-right>
+      <div class="pull-left">
+        <ion-icon name="bicycle" color="attraction-color"></ion-icon>
+        <span color="attraction-color">אטרקציות</span>
+      </div>
+      <div class="pull-right">
+        <span color="attraction-color" (click)="viewAllAttractions()">ראה הכל &gt;</span>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="items" padding-left padding-bottom>
+      <div class="card round" *ngFor="let attraction of attractions" (click)="viewAttraction(attraction.id)">
+        <div class="card-header" [ngStyle]="{'background-image': 'url(' + attraction.thumb + ')'}"></div>
+        <div class="padding-xs">
+          <h5>{{ attraction.name }}</h5>
+          <div class="rating">
+            <ion-icon name="md-star" color="restaurant-color" *ngFor="let star of range(attraction.rating)"></ion-icon>
+            <ion-icon name="md-star" color="gray" *ngFor="let star of range(5 - attraction.rating)"></ion-icon>
+            <span color="gray">{{ attraction.reviews.length }} reviews</span>
+          </div>
+          <span color="gray">Recommended for:</span>
+          <div>
+            <div class="pull-left">
+              <span color="restaurant-color">{{ attraction.scores[0].name }},</span>
+              <span color="restaurant-color">{{ attraction.scores[1].name }}</span>
+            </div>
+            <div class="pull-right">
+              {{ attraction.location.distance }} km
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--float search bar-->
+  <div class="float-search" padding>
+    <ion-input class="card round" placeholder="Search"></ion-input>
+    <button ion-button menuToggle color="white" item-left>
+      <ion-icon name="ios-menu" color="primary"></ion-icon>
+    </button>
+  </div>
+
+</ion-content>

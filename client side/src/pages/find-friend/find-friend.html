@@ -1,0 +1,57 @@
+
+<ion-header>
+
+  <ion-navbar color="white">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>חיפוש אטרקציות</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+<ion-item>
+  <ion-label>איזור</ion-label>
+  <ion-select [(ngModel)]="toppings" multiple="true">
+    <ion-option>חרמון,גולן ואצבע הגליל</ion-option>
+    <ion-option>גליל עליון וגליל מערבי</ion-option>
+    
+  </ion-select>
+</ion-item>
+<ion-item>
+  <ion-label>משך המסלול</ion-label>
+  <ion-select [(ngModel)]="toppings" multiple="true">
+    <ion-option>עד יום </ion-option>
+    <ion-option>יום</ion-option>
+    <ion-option>חצי יום</ion-option>
+    
+  </ion-select>
+</ion-item>
+<ion-item>
+  <ion-label>סוג אטרקציות</ion-label>
+  <ion-select [(ngModel)]="toppings" multiple="true">
+    <ion-option>אטרקציות ימיות</ion-option>
+    <ion-option>טיול שטח</ion-option>
+    <ion-option>אופניים</ion-option>
+    
+  </ion-select>
+</ion-item>
+
+<button ion-button round>Round Button</button>
+
+  <!--search form-->
+  <!-- <ion-searchbar>חייייפפפוווששש</ion-searchbar> -->
+
+
+<!--   <ion-list class="list-full-border">
+  <ion-item *ngFor="let contact of contacts">
+    <ion-avatar item-left>
+      <img class="profile-picture" src="{{ contact.face }}" alt=""/>
+    </ion-avatar>
+    <div>{{ contact.name }}</div>
+  </ion-item>
+</ion-list> -->
+</ion-content>
