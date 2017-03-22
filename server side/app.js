@@ -72,14 +72,9 @@ app.get('*', function(req, res, next){
 
 app.use('/', index);
 app.use('/auth', auth);
-<<<<<<< HEAD
 app.use('/api', api);
 app.use('/admin', admin);
 
-=======
-//app.use('/users', users);
-app.use('/api',api);
->>>>>>> af88a7dfedba96c6fb395c28ee84df30bc8809f0
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

@@ -1,22 +1,18 @@
 var express = require('express');
 var router = express.Router();
 
-<<<<<<< HEAD
+var Attraction = require('../models/attraction');
+
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/attration/getall', function(req, res, next) {
+  Attraction.find({}, function(err, data){
+    if(err) throw err;
+    res.json(data);
+  })
+});
+
+router.get('/attration/getone', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-module.exports = router;
-=======
-router.get('/search', function(req,res){
-	res.json({
-		success: true
 
-	});
-});
-
-
-
-module.exports = router;
->>>>>>> af88a7dfedba96c6fb395c28ee84df30bc8809f0
