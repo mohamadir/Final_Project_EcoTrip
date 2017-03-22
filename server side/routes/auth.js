@@ -89,6 +89,7 @@ router.post('/register', function(req, res){
       user.password = user.generateHash(password);
       user.role = "agent";
 
+
       var company = new Company({
         company: company,
         website: website,
@@ -100,10 +101,8 @@ router.post('/register', function(req, res){
 
       user.save(function(err){
         if(err) throw err;
-
         company.save(function(err){
           if(err) throw err;
-
           res.redirect('/');
         });
       });   
