@@ -7,7 +7,7 @@ import {StatusBar} from 'ionic-native';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {MainTabsPage} from '../pages/main-tabs/main-tabs';
 import {SettingPage} from '../pages/setting/setting';
-import {FindFriendPage} from '../pages/find-friend/find-friend';
+import { AttractionSearchPage} from '../pages/attraction-search/attraction-search';
 import {HotelsPage} from '../pages/hotels/hotels';
 import {RestaurantsPage} from '../pages/restaurants/restaurants';
 import {AttractionsPage} from '../pages/attractions/attractions';
@@ -39,7 +39,7 @@ export class MyApp {
       title: 'חיפוש מסלול',
       count: 0,
 	  icont: 'git-merge',
-      component: FindFriendPage
+      component: AttractionSearchPage
     },
 
     {

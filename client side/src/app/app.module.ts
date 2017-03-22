@@ -11,6 +11,7 @@ import {RestaurantService} from '../services/restaurant-service';
 import {ActivityService} from '../services/activity-service';
 import {AttractionService} from '../services/attraction-service';
 import {ContactService} from '../services/contact-service';
+import {Trips} from '../providers/trips'
 // end import services
 // end import services
 
@@ -18,7 +19,7 @@ import {ContactService} from '../services/contact-service';
 import { ActivityPage} from '../pages/activity/activity';
 import { AttractionDetailPage} from '../pages/attraction-detail/attraction-detail';
 import { AttractionsPage} from '../pages/attractions/attractions';
-import { FindFriendPage} from '../pages/find-friend/find-friend';
+import { AttractionSearchPage} from '../pages/attraction-search/attraction-search';
 import { HomePage} from '../pages/home/home';
 import { HotelDetailPage} from '../pages/hotel-detail/hotel-detail';
 import { HotelsPage} from '../pages/hotels/hotels';
@@ -29,6 +30,7 @@ import { MyProfilePage} from '../pages/my-profile/my-profile';
 import { RestaurantDetailPage} from '../pages/restaurant-detail/restaurant-detail';
 import { RestaurantsPage} from '../pages/restaurants/restaurants';
 import { SearchPage} from '../pages/search/search';
+import { SearchResultsPage} from '../pages/search-results/search-results';
 import { SettingPage} from '../pages/setting/setting';
 import { WelcomePage} from '../pages/welcome/welcome';
 // end import pages
@@ -39,7 +41,7 @@ import { WelcomePage} from '../pages/welcome/welcome';
     ActivityPage,
     AttractionDetailPage,
     AttractionsPage,
-    FindFriendPage,
+    AttractionSearchPage,
     HomePage,
     HotelDetailPage,
     HotelsPage,
@@ -48,6 +50,7 @@ import { WelcomePage} from '../pages/welcome/welcome';
     MyProfilePage,
     RestaurantDetailPage,
     RestaurantsPage,
+    SearchResultsPage,
     SearchPage,
     SettingPage,
     WelcomePage,
@@ -62,13 +65,14 @@ import { WelcomePage} from '../pages/welcome/welcome';
     ActivityPage,
     AttractionDetailPage,
     AttractionsPage,
-    FindFriendPage,
+    AttractionSearchPage,
     HomePage,
     HotelDetailPage,
     HotelsPage,
     AboutUSPage,
     MainTabsPage,
     ModalFilterPage,
+        SearchResultsPage,    
     MyProfilePage,
     RestaurantDetailPage,
     RestaurantsPage,
@@ -80,6 +84,7 @@ import { WelcomePage} from '../pages/welcome/welcome';
     FoodCategoryService,
     FoodService,
     GatewayService,
+    Trips,
     HotelService,
     RestaurantService,
 

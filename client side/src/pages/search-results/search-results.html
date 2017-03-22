@@ -1,0 +1,30 @@
+<!--
+  Generated template for the SearchResults page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>searchResults</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<
+<ion-content padding>
+			  <ion-item >
+						<h1 class="first-ion-item">תוצאות חיפוש</h1>
+			  </ion-item>
+			  <ion-item  *ngFor="let res of results">
+		     	
+		     	 <ion-card>
+		     			<h1>{{res.name}} ,<br/> {{res.type}} ,<br/> {{res.area}}</h1>
+		     			<br/>
+						
+		     				<button class="btn" ion-fab small><ion-icon name="ios-star"></ion-icon></button>
+		     	 </ion-card>
+
+			</ion-item>
+</ion-content>

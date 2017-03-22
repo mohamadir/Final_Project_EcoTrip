@@ -267,8 +267,6 @@
         <option value="$PROJECT_DIR$/app/theme/app.core.scss" />
         <option value="$PROJECT_DIR$/app/app.html" />
         <option value="$PROJECT_DIR$/app/services/mock-contacts.ts" />
-        <option value="$PROJECT_DIR$/app/pages/find-friend/find-friend.ts" />
-        <option value="$PROJECT_DIR$/app/pages/find-friend/find-friend.html" />
         <option value="$PROJECT_DIR$/app/pages/setting/setting.html" />
         <option value="$PROJECT_DIR$/app/pages/login/login.ts" />
         <option value="$PROJECT_DIR$/app/pages/register/register.ts" />

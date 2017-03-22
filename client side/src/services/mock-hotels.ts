@@ -64,7 +64,7 @@ export let HOTELS = [
 
 
   
-  /*,{
+  ,{
     id: 2,
     name: "Hanoi Fortuna Hotel",
     rating: 3.7,
@@ -108,7 +108,7 @@ export let HOTELS = [
       }
     ],
     reviews: []
-  },*/
+  }
   /*{
     id: 3,
     name: "Pullman Hanoi Hotel",

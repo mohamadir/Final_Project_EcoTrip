@@ -11,9 +11,14 @@ router.get('/attraction/getall', function(req, res, next) {
   })
 });
 
-router.get('/attraction/search', function(req, res, next) {
-  console.log(req.body);
+router.post('/attraction/search', function(req, res, next) {
+  	Attraction.find({},function(err,data){
+  		    if(err) throw err;
+  		res.json(data);
+  	});
 });
+
+
 
 
 
