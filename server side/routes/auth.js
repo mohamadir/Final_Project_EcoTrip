@@ -118,7 +118,7 @@ router.get('/login/admin', function(req, res){
 });
 
 router.post('/login/admin', passport.authenticate('local-login', {
-  failureRedirect : '/auth/login', // redirect back to the signup page if there is an error
+  failureRedirect : '/auth/login/admin', // redirect back to the signup page if there is an error
   failureFlash : true // allow flash messages
 }),
   function(req, res, next){

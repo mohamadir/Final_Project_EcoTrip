@@ -15,8 +15,9 @@ mongoose.connect('mongodb://localhost/ecotrip');
 
 // Routes
 var index = require('./routes/index');
-var users = require('./routes/users');
+var api = require('./routes/api');
 var auth = require('./routes/auth');
+var admin = require('./routes/admin');
 
 var app = express();
 
@@ -67,7 +68,8 @@ app.get('*', function(req, res, next){
 
 app.use('/', index);
 app.use('/auth', auth);
-//app.use('/users', users);
+app.use('/api', api);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
