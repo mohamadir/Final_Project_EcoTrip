@@ -21,7 +21,7 @@ export class AttractionSearchPage {
   searchData = {
     area:"",
     path:"",
-    type:""
+    type:[]
   }
 
 
@@ -34,9 +34,12 @@ export class AttractionSearchPage {
   }
   search(){
       console.log("search method");
-      this.http.post("http://localhost:8000/api/attraction/search", this.searchData,null).map(res => res.json()).subscribe((data)=>
-       this.navCtrl.push(SearchResultsPage,{"data":data}));
-      
+      this.http.post("http://localhost:8000/api/attraction/getall", this.searchData,null).map(res => res.json()).subscribe((data)=>{
+       console.log(data);
+       this.navCtrl.push(SearchResultsPage,{"data":data});
+      } );
+
+
   }
 
  /* onclick()

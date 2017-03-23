@@ -114,27 +114,14 @@
       <div class="clear"></div>
     </div>
     <div class="items" padding-left padding-bottom>
-      <div class="card round" *ngFor="let attraction of attractions" (click)="viewAttraction(attraction.id)">
-        <div class="card-header" [ngStyle]="{'background-image': 'url(' + attraction.thumb + ')'}"></div>
-        <div class="padding-xs">
-          <h5>{{ attraction.name }}</h5>
-          <div class="rating">
-            <ion-icon name="md-star" color="restaurant-color" *ngFor="let star of range(attraction.rating)"></ion-icon>
-            <ion-icon name="md-star" color="gray" *ngFor="let star of range(5 - attraction.rating)"></ion-icon>
-            <span color="gray">{{ attraction.reviews.length }} reviews</span>
-          </div>
-          <span color="gray">Recommended for:</span>
-          <div>
-            <div class="pull-left">
-              <span color="restaurant-color">{{ attraction.scores[0].name }},</span>
-              <span color="restaurant-color">{{ attraction.scores[1].name }}</span>
-            </div>
-            <div class="pull-right">
-              {{ attraction.location.distance }} km
-            </div>
-            <div class="clear"></div>
-          </div>
-        </div>
+      <div class="card round" *ngFor="let attraction of attractions">
+        
+          
+              <h1>{{attraction.name}} ,<br/> {{attraction.type}} ,<br/> {{attraction.area}}</h1>
+              <br/>
+            
+                <button class="btn" ion-fab small><ion-icon name="ios-star"></ion-icon></button>
+
       </div>
     </div>
   </div>

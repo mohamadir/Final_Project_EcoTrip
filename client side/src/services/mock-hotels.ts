@@ -21,8 +21,8 @@ export let HOTELS = [
     images: [
       "assets/img/hotel/thumb/img_2.jpg",
       "assets/img/hotel/thumb/img_4.jpg",
-      "assets/img/hotel/thumb/img_5.jpg",
-      "assets/img/hotel/thumb/img_6.jpg"
+           "assets/img/hotel/thumb/img_6.jpg"
+ "assets/img/hotel/thumb/img_5.jpg",
     ],
     services: [],
     numb_available_rooms: 5,

@@ -3,6 +3,7 @@ page-search-results {
 }
 .first-ion-item{
 	text-align: center;
+	font-weight: bold !important;
 }
 .fab-ios{
 	width: 40px;
@@ -12,4 +13,7 @@ page-search-results {
 }
 .btn{
 	float: left !important;
+}
+.nextBtn{
+		text-align: right;
 }

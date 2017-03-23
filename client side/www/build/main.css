@@ -69062,6 +69062,7 @@ page-search ion-navbar,
 
 .first-ion-item {
   text-align: center;
+  font-weight: bold !important;
 }
 
 .fab-ios {
@@ -69073,6 +69074,10 @@ page-search ion-navbar,
 
 .btn {
   float: left !important;
+}
+
+.nextBtn {
+  text-align: right;
 }
 
 page-welcome .logo,

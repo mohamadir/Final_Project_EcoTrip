@@ -9,6 +9,7 @@ import {HotelDetailPage} from "../hotel-detail/hotel-detail";
 import {RestaurantsPage} from "../restaurants/restaurants";
 import {HotelsPage} from "../hotels/hotels";
 import {AttractionsPage} from "../attractions/attractions";
+import { Http ,RequestOptions  } from '@angular/http';
 
 
 @Component({
@@ -27,11 +28,12 @@ export class HomePage {
   
   constructor(public app: App, public nav: NavController, public gatewayService: GatewayService,
               public hotelService: HotelService, public restaurantService: RestaurantService,
-              public attractionService: AttractionService) {
+              public attractionService: AttractionService,private http: Http) {
     // set sample data
     this.restaurants = restaurantService.getAll();
     this.hotels = hotelService.getAll();
-    this.attractions = attractionService.getAll();
+    this.attractions;
+
 	var d = new Date();
 	var weekday = new Array(7);
 	weekday[0] =  "ראשון";
@@ -41,7 +43,8 @@ export class HomePage {
 	weekday[4] = "חמישי";
 	weekday[5] = "שישי";
 	weekday[6] = "שבת";
-
+   this.http.get("http://localhost:8000/api/attraction/getall").map(res => res.json()).subscribe((data)=>
+       this.attractions=data);
 	this.day = weekday[d.getDay()];
   }
 

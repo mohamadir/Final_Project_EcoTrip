@@ -7,16 +7,23 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>searchResults</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
+			<ion-item class="nextBtn">
+								
+						<h1 class="first-ion-item">
+						<button class="pull-left"  ion-button round>בטל הכל</button>
+						תוצאות חיפוש 
+						<button class="pull-right"  ion-button round>הבא</button>
+						</h1>
 
+		    </ion-item>
 </ion-header>
 
-<
+
 <ion-content padding>
-			  <ion-item >
-						<h1 class="first-ion-item">תוצאות חיפוש</h1>
-			  </ion-item>
+
+			  
 			  <ion-item  *ngFor="let res of results">
 		     	
 		     	 <ion-card>

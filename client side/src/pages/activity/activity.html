@@ -4,16 +4,16 @@
     <button ion-button menuToggle>
       <ion-icon name="menu" color="primary"></ion-icon>
     </button>
-    <ion-title>Activity</ion-title>
+    <ion-title>מומלצים</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding class="activity common-bg">
-  <div class="card round" *ngFor="let activity of activities" margin-bottom>
+  <!-- <div class="card round" *ngFor="let activity of activities" margin-bottom>
     <img src="{{ activity.image }}" alt="">
-    <!--place's info-->
+    place's info
     <div padding>
       <div>
         <div class="pull-left">
@@ -31,8 +31,8 @@
         </div>
         <div class="clear"></div>
       </div>
-
-      <!--user info-->
+  
+      user info
       <ion-item class="no-border">
         <ion-avatar item-left>
           <img src="{{ activity.user.avatar }}" alt="">
@@ -44,15 +44,25 @@
           <ion-icon name="md-star" color="primary" *ngFor="let start of range(activity.rating)"></ion-icon>
         </div>
       </ion-item>
-
+  
       <div padding-bottom>
         {{ activity.content }}
       </div>
-
+  
       <span color="gray">Recommended for:</span>
       <div class="recommends">
         <span *ngFor="let item of activity.recommended_for" color="primary">{{ item.name }}</span>
       </div>
     </div>
-  </div>
+  </div> -->
+
+  <div class="card round" *ngFor="let attraction of attractions">
+        
+          
+              <h1>{{attraction.name}} ,<br/> {{attraction.type}} ,<br/> {{attraction.area}}</h1>
+              <br/>
+            
+                <button class="btn" ion-fab small><ion-icon name="ios-star"></ion-icon></button>
+
+      </div>
 </ion-content>

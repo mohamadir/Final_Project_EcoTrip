@@ -21,6 +21,7 @@ import {AboutUSPage} from '../pages/about-us/about-us';
     nav: new ViewChild('content')
   }
 })
+
 export class MyApp {
 
   public rootPage: any;
