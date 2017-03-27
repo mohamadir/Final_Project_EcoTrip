@@ -15,14 +15,17 @@ import {SearchResultsPage} from '../search-results/search-results';
   templateUrl: 'attraction-search.html'
 })
 export class AttractionSearchPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams,private http: Http) {}
-  results=[];
-
-  searchData = {
+    results=[];
+    mychoice="";
+    searchData = {
     area:"",
     path:"",
     type:[]
   }
+  constructor(public navCtrl: NavController, public navParams: NavParams,private http: Http) {
+    console.log(this.mychoice);
+  }
+  
 
 
   onChange(selectedValue){
@@ -33,12 +36,21 @@ export class AttractionSearchPage {
     console.log('ionViewDidLoad AttractionSearchPage');
   }
   search(){
-      console.log("search method");
-      this.http.post("http://localhost:8000/api/attraction/getall2", this.searchData,null).map(res => res.json()).subscribe((data)=>{
-       console.log("opa");
-      console.log(data);
-      this.navCtrl.push(SearchResultsPage,{"data":data});
-      } );
+      console.log(this.mychoice);
+      if(this.mychoice=="searchall"){
+       this.http.get("http://localhost:8000/api/attraction/getall2").map(res => res.json()).subscribe((data)=>{
+        this.navCtrl.push(SearchResultsPage,{"data":data});
+        } );
+      }
+    else  if(this.mychoice=="searchpath"){
+  this.http.post("http://localhost:8000/api/attraction/getall2", this.searchData,null).map(res => res.json()).subscribe((data)=>{
+        this.navCtrl.push(SearchResultsPage,{"data":data});
+        } );
+
+      }
+      else{
+        alert("אנא בחר סוג חיפוש !");
+      }
 
 
   }

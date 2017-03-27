@@ -13,11 +13,12 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class SearchResultsPage {
 	  results=[];
-
+    mychoice="";
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     this.results=this.navParams.get('data');
+    this.mychoice=this.navParams.get('mychoice');
     console.log('ionViewDidLoad SearchResultsPage');
   }
 

@@ -83,19 +83,19 @@
 	
 
 
-	<ion-list radio-group>
+	<ion-list radio-group [(ngModel)]="mychoice" name="mychoice">
 
 	      <ion-list-header class="header-label">
 	      נא לבחור שיטת חיפוש:
 		  </ion-list-header>
 		  <ion-item class="choice">
 		    <ion-label>חפש הכל</ion-label>
-		    <ion-radio checked="true" value="go"></ion-radio>
+		    <ion-radio checked="true" value="searchall"></ion-radio>
 		  </ion-item>
 
 		  <ion-item class="choice">
 		    <ion-label>הצעת מסלול טיול</ion-label>
-		    <ion-radio value="rust"></ion-radio>
+		    <ion-radio value="searchpath"></ion-radio>
 		  </ion-item>
 
 	</ion-list>
