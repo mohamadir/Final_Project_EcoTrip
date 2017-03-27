@@ -33,6 +33,7 @@ import { SearchPage} from '../pages/search/search';
 import { SearchResultsPage} from '../pages/search-results/search-results';
 import { SettingPage} from '../pages/setting/setting';
 import { WelcomePage} from '../pages/welcome/welcome';
+import { GpsPage} from '../pages/gps/gps';
 // end import pages
 
 @NgModule({
@@ -46,6 +47,7 @@ import { WelcomePage} from '../pages/welcome/welcome';
     HotelDetailPage,
     HotelsPage,
     MainTabsPage,
+    GpsPage,
     ModalFilterPage,
     MyProfilePage,
     RestaurantDetailPage,
@@ -69,10 +71,11 @@ import { WelcomePage} from '../pages/welcome/welcome';
     HomePage,
     HotelDetailPage,
     HotelsPage,
+    GpsPage,
     AboutUSPage,
     MainTabsPage,
     ModalFilterPage,
-        SearchResultsPage,    
+    SearchResultsPage,    
     MyProfilePage,
     RestaurantDetailPage,
     RestaurantsPage,

@@ -43,7 +43,7 @@ export class HomePage {
 	weekday[4] = "חמישי";
 	weekday[5] = "שישי";
 	weekday[6] = "שבת";
-   this.http.get("http://localhost:8000/api/attraction/getall").map(res => res.json()).subscribe((data)=>
+   this.http.get("http://localhost:8000/api/attraction/getall2").map(res => res.json()).subscribe((data)=>
        this.attractions=data);
 	this.day = weekday[d.getDay()];
   }

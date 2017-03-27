@@ -67790,6 +67790,17 @@ page-attraction-detail .p-100,
   height: 600px;
 }
 
+.choice {
+  display: inline-block;
+  float: left !important;
+  text-align: center !important;
+}
+
+.header-label {
+  text-align: center !important;
+  /* font-family: 'Cousine', monospace !important; */
+}
+
 page-attractions .card,
 .attractions .card {
   overflow: hidden;

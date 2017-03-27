@@ -34,9 +34,10 @@ export class AttractionSearchPage {
   }
   search(){
       console.log("search method");
-      this.http.post("http://localhost:8000/api/attraction/getall", this.searchData,null).map(res => res.json()).subscribe((data)=>{
-       console.log(data);
-       this.navCtrl.push(SearchResultsPage,{"data":data});
+      this.http.post("http://localhost:8000/api/attraction/getall2", this.searchData,null).map(res => res.json()).subscribe((data)=>{
+       console.log("opa");
+      console.log(data);
+      this.navCtrl.push(SearchResultsPage,{"data":data});
       } );
 
 

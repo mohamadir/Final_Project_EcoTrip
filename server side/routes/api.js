@@ -4,7 +4,14 @@ var router = express.Router();
 var Attraction = require('../models/attraction');
 
 /* GET users listing. */
-router.get('/attraction/getall', function(req, res, next) {
+router.post('/attraction/getall', function(req, res, next) {
+  Attraction.find({}, function(err, data){
+    if(err) throw err;
+    res.json(data);
+  })
+});
+
+router.get('/attraction/getall2', function(req, res, next) {
   Attraction.find({}, function(err, data){
     if(err) throw err;
     res.json(data);
