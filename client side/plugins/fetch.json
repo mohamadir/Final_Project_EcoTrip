@@ -1,0 +1,21 @@
+{
+    "cordova-plugin-googlemaps": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-googlemaps"
+        },
+        "is_top_level": true,
+        "variables": {
+            "API_KEY_FOR_ANDROID": "AIzaSyDEIoBwkRnZtvps6tCcWrOx_3pILhBNMms",
+            "API_KEY_FOR_IOS": "AIzaSyA_rH2Imkt7l1aNMYKr5rXdwpBsoftF-Co"
+        }
+    },
+    "cordova-sqlite-storage": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-sqlite-storage@2.0.2"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

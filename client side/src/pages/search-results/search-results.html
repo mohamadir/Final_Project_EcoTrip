@@ -11,11 +11,8 @@
   </ion-navbar>
 			<ion-item class="nextBtn">
 								
-						<h1 class="first-ion-item">
-						<button class="pull-left"  ion-button round>בטל הכל</button>
-						תוצאות חיפוש 
-						<button class="pull-right"  ion-button round>בחירת מסלול ידני</button>
-						<button class="pull-right"  ion-button round>הצעת מסלול טיול</button>
+						<h1 class="first-ion-item" >
+								תוצאות חיפוש 
 						</h1>
 
 		    </ion-item>
@@ -25,14 +22,58 @@
 <ion-content padding>
 
 			  
-			  <ion-item  *ngFor="let res of results">
-		     	
-		     	 <ion-card>
-		     			<h1>{{res.name}} ,<br/> {{res.type}} ,<br/> {{res.area}}</h1>
-		     			<br/>
-						
-		     				<button class="btn" ion-fab small><ion-icon name="ios-star"></ion-icon></button>
-		     	 </ion-card>
-
+			  <ion-item  *ngFor="let res of results" >
+				     	 <ion-card (click)='openCardAlert(res._id);' id="card">
+				     			 <ion-item>
+				     					<h2 class="attr-name">{{res.name}} </h2>
+				     			</ion-item>
+				     			<br/> {{res.type}} 
+				     			<br/> {{res.area}}
+				     			<br/>
+				     		<div id="rate"> <span color="#F2DA3F" >	{{res.engoyrating}}	<ion-icon name="ios-star"> :דירוג 
+				     		</ion-icon></span>
+				     		</div>	
+				     	</ion-card>
+				     <!-- 	<div id="addfav">
+				     						<button ion-button icon-only (click)='addToFavorite(res._id);'>
+				     						  <ion-icon name="star-half"></ion-icon>
+				     						</button>
+				     						</div> -->
 			</ion-item>
+		
+		 
+
+
+<!-- <ion-item  *ngFor="let ty of results.type">
+
+			<div class="block">
+			    <div class="block-title" padding-left padding-right>
+			      <div class="pull-left">
+			        <ion-icon name="bicycle" color="attraction-color"></ion-icon>
+			        <span color="attraction-color">ty</span>
+			      </div>
+			      <div class="pull-right">
+			        <span color="attraction-color">ראה הכל &gt;</span>
+			      </div>
+			      <div class="clear"></div>
+			    </div>
+			    <div class="items" padding-left padding-bottom>
+			      <div class="card round" *ngFor="let res of results">
+			        
+			          
+			              <h1>{{res.name}} ,<br/> {{res.type}} ,<br/> {{res.area}}</h1>
+			              <br/>
+			            
+			                <button class="btn" ion-fab small><ion-icon name="ios-star"></ion-icon></button>
+
+			      </div>
+			    </div>
+			  </div>
+</ion-item>
+ -->
+
+
+
+
+		
 </ion-content>

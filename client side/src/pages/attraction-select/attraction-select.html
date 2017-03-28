@@ -1,0 +1,70 @@
+<!--
+  Generated template for the AttractionSelect page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{attraction.name}}</ion-title>
+    <button ion-button color="dark" round (click)="demmis();">סגור</button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<!-- <div *ngIf="attraction">
+	<h1 class="title"> {{attraction.type}} </h1> <br/>
+			<div class="details">
+					שם :<h4> {{attraction.name}} </h4>   <br/>
+					מתאים ל :<h4> {{attraction.group}} </h4>   <br/>
+					איזור  :<h4> {{attraction.area}} </h4>   <br/>
+					רייטינג :<h4> {{attraction.engoyrating}} </h4>   <br/>
+					עלות :<h4> {{attraction.price}} </h4>  ש'ח <br/>
+			</div>
+
+</div>
+
+ -->
+
+
+	<ion-list >
+     		<ion-list-header class="header-label">
+	   			 שם :<h4> {{attraction.name}} </h4>
+		  </ion-list-header>
+
+		  <ion-item >
+			     	שם :<h4> {{attraction.name}} </h4>  
+
+		  </ion-item>
+
+		  <ion-item>
+					מתאים ל :<h4> {{attraction.group}} </h4>   
+
+		  </ion-item>
+
+		  <ion-item>
+					איזור  :<h4> {{attraction.area}} </h4>
+
+		  </ion-item>
+
+		  <ion-item>
+					רייטינג :<h4> {{attraction.engoyrating}} </h4>
+
+		  </ion-item>
+		  <ion-item>
+					עלות :<h4> {{attraction.price}} </h4>  ש'ח
+
+		  </ion-item>
+		<ion-item>
+		</ion-item>
+
+
+
+	</ion-list>
+				<div id="map-detail"></div>
+
+
+</ion-content>

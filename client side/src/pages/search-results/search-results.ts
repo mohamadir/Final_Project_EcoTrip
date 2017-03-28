@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { Alert,AlertController,ModalController } from 'ionic-angular';
+import {AttractionSelectPage} from '../attraction-select/attraction-select';
 /*
   Generated class for the SearchResults page.
 
@@ -14,12 +15,37 @@ import { NavController, NavParams } from 'ionic-angular';
 export class SearchResultsPage {
 	  results=[];
     mychoice="";
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+    types=[];
+    res={
+        type: ""
+    };
+    public local: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController
+    ,public modalCtrl: ModalController) {
+   // this.local = new Storage(LocalStorage);
+   // this.local.set('didTutorial', 'true');
+
+
+
+  }
 
   ionViewDidLoad() {
-    this.results=this.navParams.get('data');
-    this.mychoice=this.navParams.get('mychoice');
-    console.log('ionViewDidLoad SearchResultsPage');
+        this.results=this.navParams.get('data');
+        this.mychoice=this.navParams.get('mychoice');
+        console.log('ionViewDidLoad SearchResultsPage');
+  }
+
+   openFilters() {
+
+  }
+  openCardAlert(id){
+     let modal = this.modalCtrl.create(AttractionSelectPage,{"id":id});
+     modal.present();
+  }
+
+  addToFavorite(id){
+
+
   }
 
 }

@@ -4,15 +4,19 @@ var Schema = mongoose.Schema;
 
 var attSchema = new Schema({
  	name: String,
- 	type: String,
- 	groups: [{group: String}],
+ 	types: String,
+ 	groups:String,
  	address: {
  		lat: Number,
  		lon: Number
  	},
- 	time: Number,// should put it in agent register 
+// should put it in agent register 
  	city: String,
+ 	phone: Number,
  	area: String,
+ 	time: String,
+ 	timerating: Number,
+ 	engoyrating: Number,
  	price: Number,
  	images: [{
  		src: String

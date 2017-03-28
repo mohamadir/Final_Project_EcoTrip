@@ -24,27 +24,33 @@ router.post('/attraction/search', function(req, res, next) {
   		res.json(data);
   	});
 });
+router.post('/attraction/attraction_detail', function(req, res, next) {
+
+      let id=req.body.id;
+      console.log(req.body);
+      Attraction.findById(id,function(err,data){
+          if(err) throw err;
+                console.log(data);
+
+      res.json(data);
+    });
+
+});
+
 
 router.post('/attraction/special_attractions', function(req, res, next) {
 		let finalResult = {};
 		let area=req.body.area;
 		let type=req.body.type;
 		let path=req.body.path;
-		for(var i=0;i<type.length;i++){
-			var type2=type[i];
-  		Attraction.find({"type":type2,"area":area},function(err,data){
-  		    if(err) throw err;
-  		    finalResult.push(data);
-  		      		res.json(JSON.parse(finalResult));
+    let groups=req.body.groups;
 
-  		
-  		});
-  		}
-  		
-});
+      Attraction.find({ 'type': { $in: type },'groups': {$in: groups},'area': area,'time':path }, function(err, result){ 
+                    console.log("hi"+result);
+                    res.json(result);
+                         }).sort({engoyrating:-1}).limit(8);
 
-
-
+      });
 
 
 module.exports = router;

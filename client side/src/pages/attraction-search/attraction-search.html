@@ -34,11 +34,11 @@
 	<!-- 												choose path time  									-->
 
 	<ion-item>
-	  <ion-label>משך המסלול</ion-label>
+	  <ion-label>משך כל אטרקציה</ion-label>
 	  <ion-select [(ngModel)]="searchData.path" name="path">
-	    <ion-option>עד יום </ion-option>
-	    <ion-option>יום</ion-option>
-	    <ion-option>חצי יום</ion-option>
+	    <ion-option>עד שעה</ion-option>
+	    <ion-option>עד שעתיים</ion-option>
+	    <ion-option>שעתיים פלוס+</ion-option>
 	     
 	  </ion-select>
 	</ion-item>
@@ -68,7 +68,7 @@
 
 	<ion-item>
 	  <ion-label>קבוצה</ion-label>
-	  <ion-select [(ngModel)]="searchData.group" multiple="true" name="group">
+	  <ion-select [(ngModel)]="searchData.groups" multiple="true" name="groups">
 	    <ion-option>אתגרי</ion-option>
 	    <ion-option>סיורים</ion-option>
 	    <ion-option>פתוח בשבת</ion-option>
@@ -89,12 +89,12 @@
 	      נא לבחור שיטת חיפוש:
 		  </ion-list-header>
 		  <ion-item class="choice">
-		    <ion-label>חפש הכל</ion-label>
+		    <ion-label>חפש לפי האפשריות שבחרת</ion-label>
 		    <ion-radio checked="true" value="searchall"></ion-radio>
 		  </ion-item>
 
 		  <ion-item class="choice">
-		    <ion-label>הצעת מסלול טיול</ion-label>
+		    <ion-label>המסלול הטוב ביותר</ion-label>
 		    <ion-radio value="searchpath"></ion-radio>
 		  </ion-item>
 

@@ -7,7 +7,7 @@ import {StatusBar} from 'ionic-native';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {MainTabsPage} from '../pages/main-tabs/main-tabs';
 import {SettingPage} from '../pages/setting/setting';
-import { AttractionSearchPage} from '../pages/attraction-search/attraction-search';
+import {AttractionSearchPage} from '../pages/attraction-search/attraction-search';
 import { GpsPage} from '../pages/gps/gps';
 import {HotelsPage} from '../pages/hotels/hotels';
 import {RestaurantsPage} from '../pages/restaurants/restaurants';

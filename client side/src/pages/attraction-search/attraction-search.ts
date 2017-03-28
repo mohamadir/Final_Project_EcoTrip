@@ -4,6 +4,7 @@ import {Trips} from '../../providers/trips';
 import { Http ,RequestOptions  } from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import {SearchResultsPage} from '../search-results/search-results';
+import {SearchpathresultsPage} from '../searchpathresults/searchpathresults';
 /*
   Generated class for the AttractionSearch page.
 
@@ -20,7 +21,8 @@ export class AttractionSearchPage {
     searchData = {
     area:"",
     path:"",
-    type:[]
+    type:[],
+    groups:[]
   }
   constructor(public navCtrl: NavController, public navParams: NavParams,private http: Http) {
     console.log(this.mychoice);
@@ -38,18 +40,25 @@ export class AttractionSearchPage {
   search(){
       console.log(this.mychoice);
       if(this.mychoice=="searchall"){
-       this.http.get("http://localhost:8000/api/attraction/getall2").map(res => res.json()).subscribe((data)=>{
+       this.http.post("http://localhost:8000/api/attraction/special_attractions", this.searchData,null).map(res => res.json()).subscribe((data)=>{
+        console.log(this.searchData.type);
         this.navCtrl.push(SearchResultsPage,{"data":data});
         } );
       }
     else  if(this.mychoice=="searchpath"){
   this.http.post("http://localhost:8000/api/attraction/getall2", this.searchData,null).map(res => res.json()).subscribe((data)=>{
+              this.navCtrl.push(SearchResultsPage,{"data":data});
+        } );
+                this.navCtrl.push(SearchpathresultsPage);
+      }
+      else{
+   this.http.get("http://localhost:8000/api/attraction/getall2").map(res => res.json()).subscribe((data)=>{
         this.navCtrl.push(SearchResultsPage,{"data":data});
         } );
 
-      }
-      else{
-        alert("אנא בחר סוג חיפוש !");
+
+
+        /*alert("אנא בחר סוג חיפוש !");*/
       }
 
 

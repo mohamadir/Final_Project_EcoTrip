@@ -34,6 +34,8 @@ import { SearchResultsPage} from '../pages/search-results/search-results';
 import { SettingPage} from '../pages/setting/setting';
 import { WelcomePage} from '../pages/welcome/welcome';
 import { GpsPage} from '../pages/gps/gps';
+import {SearchpathresultsPage} from '../pages/searchpathresults/searchpathresults';
+import {AttractionSelectPage} from '../pages/attraction-select/attraction-select';
 // end import pages
 
 @NgModule({
@@ -49,17 +51,19 @@ import { GpsPage} from '../pages/gps/gps';
     MainTabsPage,
     GpsPage,
     ModalFilterPage,
+    SearchpathresultsPage,
     MyProfilePage,
     RestaurantDetailPage,
     RestaurantsPage,
     SearchResultsPage,
     SearchPage,
     SettingPage,
+    AttractionSelectPage,
     WelcomePage,
 	AboutUSPage
 ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -70,9 +74,11 @@ import { GpsPage} from '../pages/gps/gps';
     AttractionSearchPage,
     HomePage,
     HotelDetailPage,
+    AttractionSelectPage,
     HotelsPage,
     GpsPage,
     AboutUSPage,
+    SearchpathresultsPage,
     MainTabsPage,
     ModalFilterPage,
     SearchResultsPage,    
@@ -90,8 +96,6 @@ import { GpsPage} from '../pages/gps/gps';
     Trips,
     HotelService,
     RestaurantService,
-
-    
     ActivityService,
     AttractionService,
     ContactService

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
+  /**
+   * Module dependencies.
+   */
 
 var app = require('../app');
 var debug = require('debug')('server-side:server');
