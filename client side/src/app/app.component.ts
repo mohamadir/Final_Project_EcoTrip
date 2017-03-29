@@ -57,7 +57,7 @@ export class MyApp {
 	  icont: 'pizza',
       component: RestaurantsPage
     },
-
+/*
     {
       title: 'אטרקציות',
       count: 0,
@@ -70,7 +70,7 @@ export class MyApp {
       count: 0,
     icont: 'ios-navigate',
       component: GpsPage
-    },
+    }*/
 
     {
       title: 'הגדרות',

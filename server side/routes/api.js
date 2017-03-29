@@ -15,7 +15,7 @@ router.get('/attraction/getall2', function(req, res, next) {
   Attraction.find({}, function(err, data){
     if(err) throw err;
     res.json(data);
-  })
+  }).sort({engoyrating:-1});
 });
 
 router.post('/attraction/search', function(req, res, next) {
@@ -34,6 +34,17 @@ router.post('/attraction/attraction_detail', function(req, res, next) {
 
       res.json(data);
     });
+
+});
+
+router.post('/attraction/favorite', function(req, res, next) {
+
+      let id=req.body.favorite;
+      console.log(req.body);
+      console.log("==="+id+"===");
+          Attraction.find({ 'id': { $in: id }}, function(err, result){ 
+                    res.json(result);
+                         });
 
 });
 

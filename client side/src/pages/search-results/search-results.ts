@@ -20,20 +20,23 @@ export class SearchResultsPage {
     res={
         type: ""
     };
-    people;
-    public local: any;
+    people: any;
+    local:any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController
     ,public modalCtrl: ModalController) {
    // this.local = new Storage(LocalStorage);
    // this.local.set('didTutorial', 'true');
-    localForage.setItem("key", "hi");
-     localForage.getItem("key").then((result) => {
+
+     localForage.getItem("favorite").then((result) => {
                 this.people = result ? <Array<Object>> result : [];
-                console.log(result);
+                this.local=result;                
+
             }, (error) => {
                 console.log("ERROR: ", error);
             });
-
+  
+    console.log(this.local);
 
   }
 
@@ -52,7 +55,66 @@ export class SearchResultsPage {
   }
 
   addToFavorite(id){
+   /* 
+        /////////////   remove item by id ////////////////////////
 
+   localForage.getItem("favorite").then((result) => {
+                this.local = result ? <Array<Object>> result : [];
+                console.log(this.local);              
+            }, (error) => {
+                console.log("ERROR: ", error);
+            });
+    this.local.map(id2=>{
+       if(id2==id)
+       {
+         this.local.pop(id);
+         console.log("im poped"+id);
+       }
+    })
+     localForage.setItem("favorite",this.local);       
+       localForage.getItem("favorite").then((result) => {
+                this.local = result ? <Array<Object>> result : [];
+                console.log(this.local);              
+            }, (error) => {
+                console.log("ERROR: ", error);
+            });
+    console.log(this.local);       
+  */
+
+if( this.local == null ) {
+     this.local=[];
+     localForage.setItem("favorite", this.local);
+     console.log("local is null");
+
+  }
+  else{
+      this.local.map(id2 => {
+        if(id==id2){
+          return ;
+
+        }
+        });
+    localForage.getItem("favorite").then((result) => {
+                this.local = result ? <Array<Object>> result : [];
+                console.log(this.local);              
+            }, (error) => {
+                console.log("ERROR: ", error);
+            });
+    this.local.push(id);
+    localForage.setItem("favorite",this.local);
+         console.log("id pushed success");
+
+  }
+
+///////////////////////////////////////////
+/*     localForage.getItem("key").then((result) => {
+                this.people = result ? <Array<Object>> result : [];
+                this.people.push("good");
+                localForage.setItem("key", this.people);
+                console.log(result);
+            }, (error) => {
+                console.log("ERROR: ", error);
+            });*/
 
   }
 

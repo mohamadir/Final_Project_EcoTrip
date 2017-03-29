@@ -9,6 +9,7 @@ import {HotelDetailPage} from "../hotel-detail/hotel-detail";
 import {RestaurantsPage} from "../restaurants/restaurants";
 import {HotelsPage} from "../hotels/hotels";
 import {AttractionsPage} from "../attractions/attractions";
+import {AttractionSearchPage} from "../attraction-search/attraction-search";
 import { Http ,RequestOptions  } from '@angular/http';
 
 
@@ -80,6 +81,6 @@ export class HomePage {
 
   // view all restaurants
   viewAllAttractions() {
-    this.app.getRootNav().push(AttractionsPage);
+    this.app.getRootNav().push(AttractionSearchPage);
   }
 }

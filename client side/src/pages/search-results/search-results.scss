@@ -21,11 +21,9 @@ page-search-results {
 .attr-name{
 font-family: 'Suez One', serif !important;
 text-align: center !important;
- background-image: url("../assets/img/attrac.jpg");
 
 }
 #card{
-	background-color: #E6E3D5 !important;
 	text-align: center !important;
 	font-family: 'Suez One', serif;
 
@@ -39,5 +37,9 @@ text-align: center !important;
 }
 #addfav{
 	text-align: center !important;
+
+}
+#card-image{
+height: 60% !important;
 
 }
