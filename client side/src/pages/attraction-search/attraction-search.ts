@@ -40,7 +40,7 @@ export class AttractionSearchPage {
   search(){
       console.log(this.mychoice);
       if(this.mychoice=="searchall"){
-       this.http.post("http://localhost:8000/api/attraction/special_attractions", this.searchData,null).map(res => res.json()).subscribe((data)=>{
+       this.http.post("http://localhost:8000/api/attraction/getall2", this.searchData,null).map(res => res.json()).subscribe((data)=>{
         console.log(this.searchData.type);
         this.navCtrl.push(SearchResultsPage,{"data":data});
         } );

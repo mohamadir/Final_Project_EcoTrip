@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Alert,AlertController,ModalController } from 'ionic-angular';
 import {AttractionSelectPage} from '../attraction-select/attraction-select';
 import localForage from "localforage";
+import { Ionic2RatingModule } from 'ionic2-rating';
+import { NativeStorage } from '@ionic-native/native-storage';
 /*
   Generated class for the SearchResults page.
 
@@ -24,11 +26,11 @@ export class SearchResultsPage {
     local:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController
-    ,public modalCtrl: ModalController) {
+    ,public modalCtrl: ModalController,private storage: NativeStorage) {
    // this.local = new Storage(LocalStorage);
    // this.local.set('didTutorial', 'true');
 
-     localForage.getItem("favorite").then((result) => {
+     storage.getItem("favorite").then((result) => {
                 this.people = result ? <Array<Object>> result : [];
                 this.local=result;                
 
@@ -55,6 +57,8 @@ export class SearchResultsPage {
   }
 
   addToFavorite(id){
+  
+
    /* 
         /////////////   remove item by id ////////////////////////
 
@@ -88,12 +92,15 @@ if( this.local == null ) {
 
   }
   else{
+    let exist=false;
       this.local.map(id2 => {
         if(id==id2){
-          return ;
+          exist=true;
 
         }
         });
+      if(exist)
+          return;
     localForage.getItem("favorite").then((result) => {
                 this.local = result ? <Array<Object>> result : [];
                 console.log(this.local);              

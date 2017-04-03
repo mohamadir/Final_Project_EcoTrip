@@ -15,8 +15,10 @@ var attSchema = new Schema({
  	phone: Number,
  	area: String,
  	time: String,
+ 	details: String,
  	timerating: Number,
  	engoyrating: Number,
+ 	rating: [Number],
  	price: Number,
  	images: [{
  		src: String

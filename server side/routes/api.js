@@ -61,8 +61,39 @@ router.post('/attraction/special_attractions', function(req, res, next) {
                     res.json(result);
                          }).sort({engoyrating:-1}).limit(8);
 
-      });
+});
 
+
+
+router.post('/attraction/set_rating',function(req,res,next){
+      let id=req.body.id;
+      let rate=req.body.erating;
+     /* Attraction.findById(id, function(err,result){
+        let rating= result.rating;
+        rating.push(rate);
+        Attraction.update({})
+
+      });
+      */
+            Attraction.findByIdAndUpdate(id,{"$push":{"rating":rate}},{"new":true,"upsert":true},function(err,data){
+                if(err)
+                  throw err;
+                res.json(data);
+            });
+
+
+});
+router.post('/attraction/set_engoyrating',function(req,res,next){
+      let er=req.body.rateAvg;
+      let id=req.body.id;
+      console.log(er +","+id);
+      Attraction.findByIdAndUpdate(id,{$set:{"engoyrating":er}},function(err,data){
+                if(err)
+                  throw err;
+                console.log("success");
+                res.json(data);
+              });
+});
 
 module.exports = router;
 

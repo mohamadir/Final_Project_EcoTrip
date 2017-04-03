@@ -12,6 +12,8 @@ import {ActivityService} from '../services/activity-service';
 import {AttractionService} from '../services/attraction-service';
 import {ContactService} from '../services/contact-service';
 import {Trips} from '../providers/trips'
+import {CallNumber} from '@ionic-native/call-number';
+import { NativeStorage } from '@ionic-native/native-storage';
 // end import services
 // end import services
 
@@ -36,6 +38,15 @@ import { WelcomePage} from '../pages/welcome/welcome';
 import { GpsPage} from '../pages/gps/gps';
 import {SearchpathresultsPage} from '../pages/searchpathresults/searchpathresults';
 import {AttractionSelectPage} from '../pages/attraction-select/attraction-select';
+import {
+ GoogleMaps,
+ GoogleMap,
+ GoogleMapsEvent,
+ LatLng,
+ CameraPosition,
+ MarkerOptions,
+ Marker
+} from '@ionic-native/google-maps';
 // end import pages
 
 @NgModule({
@@ -98,7 +109,10 @@ import {AttractionSelectPage} from '../pages/attraction-select/attraction-select
     RestaurantService,
     ActivityService,
     AttractionService,
-    ContactService
+    ContactService,
+    GoogleMaps,
+    CallNumber,
+    NativeStorage
     /* import services */
 ]
 })
