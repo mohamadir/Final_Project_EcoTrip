@@ -39,11 +39,13 @@ router.post('/attraction/attraction_detail', function(req, res, next) {
 
 router.post('/attraction/favorite', function(req, res, next) {
 
-      let id=req.body.favorite;
+      let id=req.body.ids;
       console.log(req.body);
       console.log("==="+id+"===");
-          Attraction.find({ 'id': { $in: id }}, function(err, result){ 
+          Attraction.find({ '_id': { $in: id }}, function(err, result){ 
+                    console.log(result);
                     res.json(result);
+
                          });
 
 });

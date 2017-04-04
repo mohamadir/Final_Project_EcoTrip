@@ -30,7 +30,7 @@ export class SearchResultsPage {
    // this.local = new Storage(LocalStorage);
    // this.local.set('didTutorial', 'true');
 
-     storage.getItem("favorite").then((result) => {
+     localForage.getItem("favorite").then((result) => {
                 this.people = result ? <Array<Object>> result : [];
                 this.local=result;                
 
@@ -38,7 +38,7 @@ export class SearchResultsPage {
                 console.log("ERROR: ", error);
             });
   
-    console.log(this.local);
+    console.log(this.people);
 
   }
 
@@ -84,7 +84,7 @@ export class SearchResultsPage {
             });
     console.log(this.local);       
   */
-
+console.log("added");
 if( this.local == null ) {
      this.local=[];
      localForage.setItem("favorite", this.local);
@@ -100,7 +100,7 @@ if( this.local == null ) {
         }
         });
       if(exist)
-          return;
+        return;
     localForage.getItem("favorite").then((result) => {
                 this.local = result ? <Array<Object>> result : [];
                 console.log(this.local);              

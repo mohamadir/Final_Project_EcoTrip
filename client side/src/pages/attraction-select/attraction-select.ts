@@ -4,6 +4,7 @@ import { Http ,RequestOptions  } from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import {CallNumber} from '@ionic-native/call-number';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 
 import {

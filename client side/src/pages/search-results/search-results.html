@@ -21,7 +21,7 @@
 
 <ion-content padding>
 
-			  
+			  <h1> {{favorite}} </h1>
 			  <ion-item  *ngFor="let res of results" >
 				     	 <ion-card (click)='openCardAlert(res._id);' id="card" style="width: 300px !important; height:220 !important;">
 				     			 <ion-item id="card-image" style="margin: 0 !important;">
