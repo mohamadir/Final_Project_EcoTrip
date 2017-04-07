@@ -38,14 +38,13 @@ router.post('/attraction/attraction_detail', function(req, res, next) {
 });
 
 router.post('/attraction/favorite', function(req, res, next) {
+  let ids = req.body.ids;
 
-      let id=req.body.favorite;
-      console.log(req.body);
-      console.log("==="+id+"===");
-          Attraction.find({ 'id': { $in: id }}, function(err, result){ 
-                    res.json(result);
-      });
+  console.log("Ids:",ids);
 
+  Attraction.find({ '_id': { $in: ids }}, function(err, result){ 
+    res.json(result);
+  }); 
 });
 
 
@@ -112,12 +111,10 @@ router.post('/attraction/bestpath',function(req,res,next){
 
     Attraction.find({ 'type': {$in: types} }, function(err, resu){ 
         if (err) throw err;
-
         types.map((type)=>{
             let ind=0;
             let max=0;
             resu.map((attraction, index)=>{
-         //     console.log("index: "+index+", attraction: "+attraction);
                 if(type === attraction.type){
                     if(attraction.engoyrating>=max){
                         max=attraction.engoyrating;
