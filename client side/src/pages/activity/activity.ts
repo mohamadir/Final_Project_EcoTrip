@@ -36,6 +36,14 @@ export class ActivityPage {
          this.attractions=data
        // console.log(data);
        });*/
+
+
+
+
+
+       // shake //
+
+       
   }
 
   // make array with range is n
@@ -47,4 +55,8 @@ export class ActivityPage {
   toggleLike(activity) {
     activity.is_liked = !activity.is_liked;
   }
+
+
+
+
 }

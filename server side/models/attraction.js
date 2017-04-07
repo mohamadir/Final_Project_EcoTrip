@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var attSchema = new Schema({
  	name: String,
- 	types: String,
+ 	type: String,
  	groups:String,
  	address: {
  		lat: Number,

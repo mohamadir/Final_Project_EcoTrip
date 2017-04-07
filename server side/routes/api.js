@@ -39,14 +39,12 @@ router.post('/attraction/attraction_detail', function(req, res, next) {
 
 router.post('/attraction/favorite', function(req, res, next) {
 
-      let id=req.body.ids;
+      let id=req.body.favorite;
       console.log(req.body);
       console.log("==="+id+"===");
-          Attraction.find({ '_id': { $in: id }}, function(err, result){ 
-                    console.log(result);
+          Attraction.find({ 'id': { $in: id }}, function(err, result){ 
                     res.json(result);
-
-                         });
+      });
 
 });
 
@@ -57,8 +55,19 @@ router.post('/attraction/special_attractions', function(req, res, next) {
 		let type=req.body.type;
 		let path=req.body.path;
     let groups=req.body.groups;
+    let where = {}
+    if(type.length>0)
+      where["type"]= { $in: type };
+    if(groups.length>0)
+       where["groups"]= {$in: groups};
+    if(area)
+       where["area"]= area;
+    if(path)
+       where["time"]= path;
 
-      Attraction.find({ 'type': { $in: type },'groups': {$in: groups},'area': area,'time':path }, function(err, result){ 
+    console.log(where);
+
+      Attraction.find(where, function(err, result){ 
                     console.log("hi"+result);
                     res.json(result);
                          }).sort({engoyrating:-1}).limit(8);
@@ -95,6 +104,33 @@ router.post('/attraction/set_engoyrating',function(req,res,next){
                 console.log("success");
                 res.json(data);
               });
+});
+ 
+router.post('/attraction/bestpath',function(req,res,next){
+    let types=req.body.type;
+    let finalResult=[];
+
+    Attraction.find({ 'type': {$in: types} }, function(err, resu){ 
+        if (err) throw err;
+
+        types.map((type)=>{
+            let ind=0;
+            let max=0;
+            resu.map((attraction, index)=>{
+         //     console.log("index: "+index+", attraction: "+attraction);
+                if(type === attraction.type){
+                    if(attraction.engoyrating>=max){
+                        max=attraction.engoyrating;
+                        ind=index;
+                    }
+                  
+                }
+            });
+            finalResult.push(resu[ind]);
+        });
+            res.json(finalResult);
+    });
+
 });
 
 module.exports = router;
