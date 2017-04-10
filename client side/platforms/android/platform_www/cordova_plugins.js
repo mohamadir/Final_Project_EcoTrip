@@ -1,6 +1,14 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
+        "id": "com.bunkerpalace.cordova.YoutubeVideoPlayer.YoutubeVideoPlayer",
+        "file": "plugins/com.bunkerpalace.cordova.YoutubeVideoPlayer/plugins/com.bunkerpalace.cordova.YoutubeVideoPlayer/www/YoutubeVideoPlayer.js",
+        "pluginId": "com.bunkerpalace.cordova.YoutubeVideoPlayer",
+        "clobbers": [
+            "YoutubeVideoPlayer"
+        ]
+    },
+    {
         "id": "cordova-plugin-device.device",
         "file": "plugins/cordova-plugin-device/www/device.js",
         "pluginId": "cordova-plugin-device",
@@ -95,6 +103,7 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
+    "com.bunkerpalace.cordova.YoutubeVideoPlayer": "1.0.1",
     "cordova-plugin-console": "1.0.6",
     "cordova-plugin-device": "1.1.5",
     "cordova-plugin-facebook4": "1.7.4",

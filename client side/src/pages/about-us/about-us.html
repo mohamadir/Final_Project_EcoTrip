@@ -13,7 +13,10 @@
 
 <ion-content padding class="setting">
   
-    Coming Soon  
+  <input placeholder="Enter a video id" #videoId>
+	<button ion-button (click)="playVideo(videoId.value)">
+	  <ion-icon name="play"></ion-icon>
+	</button>
 
 
 </ion-content>

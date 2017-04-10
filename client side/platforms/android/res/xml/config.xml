@@ -1,5 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.ionicframework.ioncityview532192" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <widget>
+        <feature name="YoutubeVideoPlayer">
+            <param name="android-package" value="com.bunkerpalace.cordova.YoutubeVideoPlayer" />
+        </feature>
+    </widget>
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
@@ -51,9 +56,9 @@
     <feature name="CallNumber">
         <param name="android-package" value="mx.ferreyra.callnumber.CFCallNumber" />
     </feature>
-    <name>ion_city_view</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <name>Eco Trip</name>
+    <description>אפליקציה לחיפוש אטרקציות , מלונות ומסעדות בארץ .. </description>
+    <author email="ecoTrip-mh@gmail.com" href="http://ionicframework.com/">Eco Trip Team</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

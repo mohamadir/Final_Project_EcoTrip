@@ -40,7 +40,7 @@ export class AttractionSelectPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController
   	, private params: NavParams,private callNumber: CallNumber,private http: Http,public platform: Platform,private socialSharing: SocialSharing,
     private googleMaps: GoogleMaps) {
-
+      
 	  	this.id=params.get("id");
 	  	let idSend={
 	  		id:this.id

@@ -24,14 +24,18 @@
 					      <button ion-fab style="background: blue !important;"><ion-icon name="logo-googleplus"></ion-icon></button>
 		  		  </ion-fab-list>
 		  </ion-fab>
-
-
-
 	<ion-list >
      	
 		<ion-item class="attraction-style" style="height: 200px !important;width: 100% !important;">
-				   <img src="http://www.eilatnow.com/uploads/pages_pictures_ID38/DSC_0324.jpg" 
-				     			 	style="width: 100%; height: 100%;">
+                    
+
+                     <ion-slides pager>
+					    <ion-slide *ngFor="let image of attraction.images" style="background-size: 100% !important;">
+					      <img src="data:image/jpeg;base64,{{image.base64}}"
+                    style="width: 100%; height: 100%; max-width: 100%; 
+    max-height: 220px;">
+					    </ion-slide>
+					  </ion-slides>
 		</ion-item>
 	  <ion-item class="attraction-style" style="text-align: center !important;">
 		     	שם <h4> {{attraction.name}} </h4>  
@@ -45,7 +49,7 @@
 	  </ion-item>
 
 	  <ion-item class="attraction-style" style="text-align: center !important;">
-				מתאים ל <h4> {{attraction.group}} </h4>   
+				מתאים ל <h4> {{attraction.groups}} </h4>   
 
 	  </ion-item>
 

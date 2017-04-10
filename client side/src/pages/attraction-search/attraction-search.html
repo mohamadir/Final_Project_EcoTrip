@@ -16,6 +16,7 @@
 	<ion-item >
 	  <ion-label>איזור</ion-label>
 	  <ion-select [(ngModel)]="searchData.area" name="area">
+	    <ion-option></ion-option>
 	    <ion-option>חרמון,גולן ואצבע הגליל</ion-option>
 	    <ion-option>גליל עליון וגליל מערבי</ion-option>
 	    <ion-option>גליל תחתון, עמקים וגלבוע</ion-option>
@@ -36,6 +37,7 @@
 	<ion-item>
 	  <ion-label>משך כל אטרקציה</ion-label>
 	  <ion-select [(ngModel)]="searchData.path" name="path">
+	    <ion-option></ion-option>
 	    <ion-option>עד שעה</ion-option>
 	    <ion-option>עד שעתיים</ion-option>
 	    <ion-option>שעתיים פלוס+</ion-option>
@@ -48,6 +50,7 @@
 	<ion-item>
 	  <ion-label>סוג אטרקציות</ion-label>
 	  <ion-select [(ngModel)]="searchData.type" multiple="true" name="type">
+	  	<ion-option></ion-option>
 	    <ion-option>אטרקציות ימיות</ion-option>
 	    <ion-option>גני חיות / פינות ליטוף</ion-option>
 	    <ion-option>פארק משחקים</ion-option>
@@ -69,6 +72,7 @@
 	<ion-item>
 	  <ion-label>קבוצה</ion-label>
 	  <ion-select [(ngModel)]="searchData.groups" multiple="true" name="groups">
+	    <ion-option></ion-option>
 	    <ion-option>אתגרי</ion-option>
 	    <ion-option>סיורים</ion-option>
 	    <ion-option>פתוח בשבת</ion-option>
