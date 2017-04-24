@@ -59,14 +59,14 @@ router.post('/register', function(req, res){
   var email = req.body.email;
   var password = req.body.password;
   // company
-  var company = req.body.company;
+  var name = req.body.name;
   var website = req.body.website;
   var telephone = req.body.telephone;
   var type = req.body.type;
 
   req.checkBody('email', 'Email is require').notEmpty();
   req.checkBody('password', 'Password is require').notEmpty();
-  req.checkBody('company', 'Company is require').notEmpty();
+  req.checkBody('name', 'Name is require').notEmpty();
   req.checkBody('website', 'Website is require').notEmpty();
   req.checkBody('telephone', 'Telephone is require').notEmpty();
   req.checkBody('type', 'Type is require').notEmpty();
@@ -91,7 +91,7 @@ router.post('/register', function(req, res){
 
 
       var company = new Company({
-        company: company,
+        name: name,
         website: website,
         telephone: telephone,
         type: type,
@@ -133,7 +133,8 @@ router.post('/login/agent', passport.authenticate('local-login', {
   failureFlash : true // allow flash messages
 }),
   function(req, res, next){
-    res.redirect('/agent');
+    userid = req.user._id;
+    res.redirect('/agent?id=' + userid);
 });
 
 router.get('/logout', function(req, res){
@@ -157,6 +158,7 @@ function isAdmin(req, res, next){
 }
 
 // New Admin Temp
+/*
 router.get('/admin/register', function(req, res){
   var user = new User;
   user.email = "admin@admin.com";
@@ -168,5 +170,5 @@ router.get('/admin/register', function(req, res){
     res.redirect('/auth/login/admin');
   });
 });
-
+*/
 module.exports = router;

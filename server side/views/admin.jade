@@ -1,5 +1,28 @@
 extends layout
 block content
-   //- ul 
-   //- each company in companies 
-   //-  li #{company.website}
+  .container
+    .panel.panel-default
+              .panel-body
+                .h3(style="text-align: center;") 
+                  | ניהול משתמשים
+                hr
+                table.table
+                  thead
+                    tr
+                      th Company Name 
+                      th website
+                      th telephone
+                  tbody
+                    td                       
+                       for company in companies
+                        tr
+                          td 
+                            a(href="/agent/newattraction")= company.name
+                          td= company.website
+                          td= company.telephone  
+                          //- td= attraction.groups
+                          //- td= attraction.city
+                          //- td= attraction.area
+                          //- td= attraction.price
+                    //-     td
+                    //-       a.btn.btn-danger.btnremove(data-id="#{attraction._id}") <i class="fa fa-trash" aria-hidden="true"></i>

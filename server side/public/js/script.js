@@ -14,6 +14,22 @@ $(window).load(function() {
 })
 
 $(document).ready(function() {
+		$('.btnremove').on('click', function() {
+			console.log("Delete Requset");
+      var userId = $(this).attr('data-id');
+      $.ajax({
+         method: "POST",
+         url: '/agent/delete',
+         data: {"userId": userId},
+         success: function(result) {
+            if(result) {
+               location.reload();
+            }
+         }
+      })
+   	});
+		$("#groups_multiselect").multiselect();
+
 		//animated logo
 		$(".navbar-brand").hover(function () {
 			$(this).toggleClass("animated shake");

@@ -8,6 +8,9 @@ var expressValidator = require('express-validator');
 var passport = require("passport");
 var session = require("express-session");
 var flash = require("connect-flash");
+var cookieSession = require('cookie-session');
+var multer  = require('multer');
+var upload = multer({ dest: 'uploads/' });
 
 // Database
 var mongoose = require('mongoose');
@@ -18,6 +21,7 @@ var index = require('./routes/index');
 var api = require('./routes/api');
 var auth = require('./routes/auth');
 var admin = require('./routes/admin');
+var agent = require('./routes/agent');
 
 var app = express();
 
@@ -32,6 +36,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(cookieSession({
+  name: 'session',
+  keys: ['12kj3gh1k24gk3g2k12h3gh'],
+ 
+  // Cookie Options 
+  maxAge: 60 * 60 * 60 * 1000 // 24 hours 
+}));
 
 app.use(session({
   secret: "secret",
@@ -70,11 +82,12 @@ app.use('/', index);
 app.use('/auth', auth);
 app.use('/api', api);
 app.use('/admin', admin);
+app.use('/agent', agent);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
-  err.status = 404; 
+  err.status = 404;
   next(err);
 });
 
