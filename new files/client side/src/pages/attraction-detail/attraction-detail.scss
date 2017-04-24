@@ -1,0 +1,8 @@
+page-attraction-detail,
+.attraction-detail {
+  // import extends css
+  $color-bar: color($colors, attraction-color);
+  @import "../../theme/circle_progress";
+}
+
+

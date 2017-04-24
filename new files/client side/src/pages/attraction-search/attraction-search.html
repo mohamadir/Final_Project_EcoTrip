@@ -1,0 +1,132 @@
+<ion-header>
+
+  <ion-navbar color="white">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>חיפוש אטרקציות</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<!-- 												choose area  									-->
+<form (ngSubmit)="search()" >
+	<ion-item >
+	  <ion-label>איזור</ion-label>
+	  <ion-select [(ngModel)]="searchData.area" name="area">
+	    <ion-option></ion-option>
+	    <ion-option>חרמון,גולן ואצבע הגליל</ion-option>
+	    <ion-option>גליל עליון וגליל מערבי</ion-option>
+	    <ion-option>גליל תחתון, עמקים וגלבוע</ion-option>
+	    <ion-option>כרמל, רמות מנשה והשרון</ion-option>
+	    <ion-option>מישור החוף וגוש דן</ion-option>
+	    <ion-option>שומרון</ion-option>
+	    <ion-option>הרי ירושלים והשפלה</ion-option>
+	    <ion-option>ירושלים</ion-option>
+	    <ion-option>ים המלח ומדבר יהודה</ion-option>
+	    <ion-option>צפון הנגב</ion-option>
+	    <ion-option>מרכז הנגב והמכתשים</ion-option>
+	    <ion-option>דרום הנגב והרי אילת</ion-option>
+	  </ion-select>
+	</ion-item>
+
+	<!-- 												choose path time  									-->
+
+	<ion-item>
+	  <ion-label>משך כל אטרקציה</ion-label>
+	  <ion-select [(ngModel)]="searchData.path" name="path">
+	    <ion-option></ion-option>
+	    <ion-option>עד שעה</ion-option>
+	    <ion-option>עד שעתיים</ion-option>
+	    <ion-option>שעתיים פלוס+</ion-option>
+	     
+	  </ion-select>
+	</ion-item>
+
+	<!-- 												choose attraction typs   									-->
+
+	<ion-item>
+	  <ion-label>סוג אטרקציות</ion-label>
+	  <ion-select [(ngModel)]="searchData.type" multiple="true" name="type">
+	  	<ion-option></ion-option>
+	    <ion-option>אטרקציות ימיות</ion-option>
+	    <ion-option>גני חיות / פינות ליטוף</ion-option>
+	    <ion-option>פארק משחקים</ion-option>
+	    <ion-option>ספורט ימי/ צלילה / שיט</ion-option>
+	    <ion-option>אטרקציות בטבע</ion-option>
+	    <ion-option>השכרת אופניים או אופניים חשמליים</ion-option>
+	    <ion-option>פארק דיג</ion-option>
+	    <ion-option>סדנאות / הרצאות</ion-option>
+	    <ion-option>טרקטרונים / קטרינג / רייזרים</ion-option>
+	    <ion-option>מרכז מבקרים</ion-option>
+	    <ion-option>צפרות</ion-option>
+	    <ion-option>תיירות חקלאית</ion-option>
+	    <ion-option>אטרקציות לקבוצות ואירועים</ion-option>
+	    <ion-option>סיורים</ion-option>
+	    
+	  </ion-select>
+	</ion-item>
+
+	<ion-item>
+	  <ion-label>קבוצה</ion-label>
+	  <ion-select [(ngModel)]="searchData.groups" multiple="true" name="groups">
+	    <ion-option></ion-option>
+	    <ion-option>אתגרי</ion-option>
+	    <ion-option>סיורים</ion-option>
+	    <ion-option>פתוח בשבת</ion-option>
+	    <ion-option>לילדים</ion-option>
+	    <ion-option>רומנטי</ion-option>
+	    <ion-option>חינם</ion-option>
+	    <ion-option>כניסה למים</ion-option>
+	    <ion-option>אנשים עם מוגבליות</ion-option>
+	    <ion-option>מתאים לקבוצה</ion-option>
+	  </ion-select>
+	</ion-item>
+	
+
+
+	<ion-list radio-group [(ngModel)]="mychoice" name="mychoice">
+
+	      <ion-list-header class="header-label">
+	      נא לבחור שיטת חיפוש:
+		  </ion-list-header>
+		  <ion-item class="choice">
+		    <ion-label>חפש לפי האפשריות שבחרת</ion-label>
+		    <ion-radio checked="true" value="searchall"></ion-radio>
+		  </ion-item>
+
+		  <ion-item class="choice">
+		    <ion-label>המסלול הטוב ביותר</ion-label>
+		    <ion-radio value="searchpath"></ion-radio>
+		  </ion-item>
+
+	</ion-list>
+
+
+
+
+
+
+
+	<button ion-button class="bsubmit" type="submit"  (click)="search(); false" block>חפש</button>
+	<!-- <button ion-button block (click)="onclick(); false">CLICK</button> -->
+	<ion-img class= "image" style="height: 300px !important;" src="../assets/img/attrac.jpg"></ion-img>
+
+</form>
+
+
+  <!--search form-->
+  <!-- <ion-searchbar>חייייפפפוווששש</ion-searchbar> -->
+
+
+<!--   <ion-list class="list-full-border">
+  <ion-item *ngFor="let contact of contacts">
+    <ion-avatar item-left>
+      <img class="profile-picture" src="{{ contact.face }}" alt=""/>
+    </ion-avatar>
+    <div>{{ contact.name }}</div>
+  </ion-item>
+</ion-list> -->
+</ion-content>

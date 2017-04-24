@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar color="white">
+    <button ion-button menuToggle>
+      <ion-icon name="menu" color="primary"></ion-icon>
+    </button>
+    <ion-title>מומלצים</ion-title>
+      <ion-icon (click)="deleteAll(); false" style="color: #FE5F55 !important; margin-right: 7px !important; font-size:40px !important; float:right !important; display: inline !important;" ios="ios-trash" md="md-trash"></ion-icon>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="activity common-bg">
+ <ion-item  *ngFor="let res of attractions" >
+        <ion-card  id="card" style="width: 300px !important; height:220 !important;" (click)='openCardAlert(res._id);' >
+                           <ion-item id="card-image" style="margin: 0 !important;">
+                            <img src="data:image/jpeg;base64,{{res.images[0].base64}}" 
+                            style="width: 100%; height: 100%;">
+                           <!--  <img src="http://www.eilatnow.com/uploads/pages_pictures_ID38/DSC_0324.jpg" 
+                           style="width: 100%; height: 100%;"> -->
+                          </ion-item>
+                          <h1 class="attr-name" style="color: gray !important;">{{res.name}} </h1>
+                        אטרקציה של   {{res.type}} 
+                          <br/> ב{{res.area}}
+                          <br/> 
+
+                        <div id="rate"> <span color="#F2DA3F" > {{res.engoyrating}} <ion-icon name="ios-star"> :דירוג 
+                        </ion-icon></span>
+                        </div>  
+           </ion-card>
+          <span (click)="remove(res._id); false"> <ion-icon name="md-close" style="font-size: 24px; color:#FE5F55 "> </ion-icon></span>
+  </ion-item>
+
+</ion-content>

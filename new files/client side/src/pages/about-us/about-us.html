@@ -1,0 +1,22 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>About Us</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="setting">
+  
+  <input placeholder="Enter a video id" #videoId>
+	<button ion-button (click)="playVideo(videoId.value)">
+	  <ion-icon name="play"></ion-icon>
+	</button>
+
+
+</ion-content>

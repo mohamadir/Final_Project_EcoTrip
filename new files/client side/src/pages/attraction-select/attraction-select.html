@@ -1,0 +1,94 @@
+<!--
+  Generated template for the AttractionSelect page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{attraction.name}}</ion-title>
+    <button ion-button color="dark" round (click)="demmis();">סגור</button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+		<ion-fab top right edge>
+		    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+		  		  <ion-fab-list>
+					      <button ion-fab (click)='share();' style="background: green !important;"><ion-icon name="logo-whatsapp"></ion-icon></button>
+					      <button ion-fab style="background: yellow !important;"><ion-icon name="logo-twitter"></ion-icon></button>
+					      <button ion-fab style="background: red !important;"><ion-icon name="logo-vimeo"></ion-icon></button>
+					      <button ion-fab style="background: blue !important;"><ion-icon name="logo-googleplus"></ion-icon></button>
+		  		  </ion-fab-list>
+		  </ion-fab>
+	<ion-list >
+     	
+		<ion-item class="attraction-style" style="height: 200px !important;width: 100% !important;">
+                    
+
+                     <ion-slides pager>
+					    <ion-slide *ngFor="let image of attraction.images" style="background-size: 100% !important; margin-right: 3px;">
+					      <img src="data:image/jpeg;base64,{{image.base64}}"
+                    style="width: 100%; height: 100%; max-width: 100%; max-height: 220px;">
+					    </ion-slide>
+					  </ion-slides>
+		</ion-item>
+	  <ion-item class="attraction-style" style="text-align: center !important;">
+		     	שם <h4> {{attraction.name}} </h4>  
+
+	  </ion-item>
+
+	  <ion-item class="attraction-style" style="text-align: center !important;height: 100px !important;">
+		     	<div class="scroll-right">
+		     						<p> {{attraction.details}} </p> 
+		     	</div>
+	  </ion-item>
+
+	  <ion-item class="attraction-style" style="text-align: center !important;">
+				מתאים ל <h4> {{attraction.groups}} </h4>   
+
+	  </ion-item>
+
+	  <ion-item class="attraction-style" style="text-align: center !important;">
+				איזור  <h4> {{attraction.area}} </h4>
+
+	  </ion-item>
+
+	  <ion-item class="attraction-style" style="text-align: center !important;">
+				רייטינג <h4> {{attraction.engoyrating}} </h4>
+
+	  </ion-item>
+	  <ion-item class="attraction-style" style="text-align: center !important;">
+				טלפון <a (click)="call();" > <h4 style="font-size: 15px !important; font-weight: bold !important; color: green !important;"> {{attraction.phone}} </h4> </a>
+
+	  </ion-item>
+	  <ion-item class="attraction-style" style="text-align: center !important;">
+				עלות  <h4> {{attraction.price}} </h4>  ש'ח
+
+	  </ion-item>
+	  <ion-item class="attraction-style">
+
+			 <div class="border-bottom" text-center padding>
+				    <span class="bold" color="gray">דרג את החוויה </span>
+				    <div class="rating-form">
+				      <ion-icon name="ios-star" color="hotel-color" *ngFor="let star of range(erating); let i = index"
+				                (click)="erate(i + 1)"></ion-icon>
+				      <ion-icon name="ios-star-outline" color="hotel-color" *ngFor="let star of range(10 - erating); let i = index"
+				                (click)="erate(i + erating + 1)"></ion-icon>
+				    </div>
+		    </div>
+
+
+	</ion-item>
+
+
+
+</ion-list>
+	
+<div id="map" style="width: 100% !important; height: 100px !important; "></div>
+
+
+</ion-content>

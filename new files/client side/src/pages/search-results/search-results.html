@@ -1,0 +1,87 @@
+<!--
+  Generated template for the SearchResults page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+      <ion-icon (click)="toFavoritePage(); false" style="float: right; font-size: 20px; color: #8A0808; font-weight: bold; margin-right: 4px; " ios="ios-star-half" md="md-star-half">למועדפים </ion-icon>
+
+  </ion-navbar>
+			<ion-item class="nextBtn">
+								
+						<h1 class="first-ion-item" >
+								תוצאות חיפוש 
+						</h1>
+
+		    </ion-item>
+</ion-header>
+
+
+<ion-content padding>
+
+			  <h1> {{favorite}} </h1>
+			  <ion-item  *ngFor="let res of results" style="display: inline !important;">
+				     	 <ion-card (click)='openCardAlert(res._id);' style="display: inline !important;" id="card" style="width: 300px !important; height:220 !important;">
+				     			 <ion-item id="card-image" style="margin: 0 !important;">
+				     			 	 <img src="data:image/jpeg;base64,{{res.images[0].base64}}" 
+                            style="width: 100% !important; height: 100% !important;">
+                            
+				     			</ion-item>
+				     			<h1 class="attr-name" style="color: gray !important;">{{res.name}} </h1>
+				     		אטרקציה של 	 {{res.type}} 
+				     			<br/> ב{{res.area}}
+				     			<br/> 
+				     		<div id="rate"> <span color="#F2DA3F" >	{{res.engoyrating}}	<ion-icon name="ios-star"> :דירוג 
+				     		</ion-icon></span>
+				     		</div>	
+				     			
+				     	</ion-card>
+						<div id="addfav">
+								<button ion-button icon-only (click)='addToFavorite(res._id);'>
+								  <ion-icon name="star-half"  style="width: 250px !important;">הוסף למועדפים</ion-icon>
+								</button>
+								<span *ngIf="isInFavorits(res._id);" > <ion-icon  style="color: 
+								#FE5F55 !important; margin-right: 7px !important; font-size:25px !important; float:right !important; display: inline !important;" ios="ios-trash" md="md-trash"></ion-icon></span>
+						</div>
+			</ion-item>
+		
+		 
+
+
+<!-- <ion-item  *ngFor="let ty of results.type">
+
+			<div class="block">
+			    <div class="block-title" padding-left padding-right>
+			      <div class="pull-left">
+			        <ion-icon name="bicycle" color="attraction-color"></ion-icon>
+			        <span color="attraction-color">ty</span>
+			      </div>
+			      <div class="pull-right">
+			        <span color="attraction-color">ראה הכל &gt;</span>
+			      </div>
+			      <div class="clear"></div>
+			    </div>
+			    <div class="items" padding-left padding-bottom>
+			      <div class="card round" *ngFor="let res of results">
+			        
+			          
+			              <h1>{{res.name}} ,<br/> {{res.type}} ,<br/> {{res.area}}</h1>
+			              <br/>
+			            
+			                <button class="btn" ion-fab small><ion-icon name="ios-star"></ion-icon></button>
+
+			      </div>
+			    </div>
+			  </div>
+</ion-item>
+ -->
+
+
+
+
+		
+</ion-content>
