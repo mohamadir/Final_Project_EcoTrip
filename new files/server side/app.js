@@ -14,7 +14,7 @@ var upload = multer({ dest: 'uploads/' });
 
 // Database
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/ecotrip');
+mongoose.connect('mongodb://ecotrip:ecotrip1234@ds115701.mlab.com:15701/ecotrip');
 
 // Routes
 var index = require('./routes/index');

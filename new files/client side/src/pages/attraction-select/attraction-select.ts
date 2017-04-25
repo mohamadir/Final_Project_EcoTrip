@@ -45,7 +45,7 @@ export class AttractionSelectPage {
 	  	let idSend={
 	  		id:this.id
 	  	};
-  	this.http.post("http://localhost:8000/api/attraction/attraction_detail",idSend).map(res => res.json()).subscribe((data)=>{
+  	this.http.post("http://ecotr.herokuapp.com/api/attraction/attraction_detail",idSend).map(res => res.json()).subscribe((data)=>{
   			this.attraction=data;
         this.lat=data.address.lat;
         this.lon=data.address.lon;
@@ -73,14 +73,14 @@ export class AttractionSelectPage {
    erate(stars) {
     this.erating = stars;
     let data={erating: this.erating,id: this.id};
-    this.http.post("http://localhost:8000/api/attraction/set_rating",data).map(res => res.json()).subscribe((data)=>{
+    this.http.post("http://ecotr.herokuapp.com/api/attraction/set_rating",data).map(res => res.json()).subscribe((data)=>{
         console.log(data);
         let array=data.rating;
         let rateSum=0;
         array.map(i=>{rateSum+=i});
        let rateAvg=rateSum/array.length;
           let data2={rateAvg: rateAvg,id: this.id};
-          this.http.post("http://localhost:8000/api/attraction/set_engoyrating",data2).map(res=> res.json()).subscribe((data)=>{
+          this.http.post("http://ecotr.herokuapp.com/api/attraction/set_engoyrating",data2).map(res=> res.json()).subscribe((data)=>{
               console.log(data);
           });
         console.log(rateAvg);

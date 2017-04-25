@@ -21,7 +21,7 @@ export class ActivityPage {
     this.favorite=localForage.getItem("favorite").then((data2)=>{
       console.log(data2);
       let data3={ids:data2};
-        this.http.post("http://localhost:8000/api/attraction/favorite",data3,null).map(res => res.json()).subscribe((data)=>{
+        this.http.post("http://ecotr.herokuapp.com/api/attraction/favorite",data3,null).map(res => res.json()).subscribe((data)=>{
            console.log(data);
            this.attractions=data;
         } );
@@ -55,7 +55,7 @@ export class ActivityPage {
        dat.splice(index, 1);
      this.favorite=localForage.setItem("favorite",dat);
      let data3={ids:dat};
-     this.http.post("http://localhost:8000/api/attraction/favorite",data3,null).map(res => res.json()).subscribe((data)=>{
+     this.http.post("http://ecotr.herokuapp.com/api/attraction/favorite",data3,null).map(res => res.json()).subscribe((data)=>{
            this.attractions=data;
         } );
        }
@@ -67,7 +67,7 @@ export class ActivityPage {
     this.favorite=localForage.getItem("favorite").then((data2)=>{
       console.log(data2);
       let data3={ids:data2};
-        this.http.post("http://localhost:8000/api/attraction/favorite",data3,null).map(res => res.json()).subscribe((data)=>{
+        this.http.post("http://ecotr.herokuapp.com/api/attraction/favorite",data3,null).map(res => res.json()).subscribe((data)=>{
            console.log(data);
            this.attractions=data;
         } );
