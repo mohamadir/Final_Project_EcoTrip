@@ -16,24 +16,15 @@
 
 
 
-#                                                מסכם לאפלקציה שעשינו
+# Application screenshots 
 ![eco](https://user-images.githubusercontent.com/17565534/27374716-801b4240-5675-11e7-9c8b-7fec9eafb840.png)
 ![eco2](https://user-images.githubusercontent.com/17565534/27376480-f8cd012e-567a-11e7-9907-23953e5fbe14.png)
 
 
-##More Info :
+##  diagram of the connection between database and application
+![eco2](https://user-images.githubusercontent.com/17565534/27376480-f8cd012e-567a-11e7-9907-23953e5fbe14.png)
 
-###how many times did you plan to go to attractions trip with your friends, but actually you didnt know these points:
-
-**1)is the attraction place available today ?**
-
-**2)is it cheapest?**
-
-**3)is the path is shortest?**
-           
-           This application will manage your trip !! 
-
-           The app will be available for ANDROID and IOS.
+### 
 
 ## Staff:
 * Presentors: mohamed ibrahem and hosen jaber <br>
