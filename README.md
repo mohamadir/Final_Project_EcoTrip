@@ -23,8 +23,9 @@
 
 ##  diagram of the connection between database and application
 ![eco23](https://user-images.githubusercontent.com/17565534/27377189-f3fe68d4-567c-11e7-8aa0-8bd2501ca071.png)
+##  how the application works 
+![aa](https://user-images.githubusercontent.com/17565534/27377370-65474646-567d-11e7-8bed-6ad4a10c1ca2.png)
 
-### 
 
 ## Staff:
 * Presentors: mohamed ibrahem and hosen jaber <br>
