@@ -29,7 +29,7 @@
 
 ## Staff:
 * Presentors: mohamed ibrahem and hosen jaber <br>
-[![mohamed](https://avatars3.githubusercontent.com/u/17565537?v=3&s=400)](https://github.com/mohamadir)[![hosen] 
-(https://avatars0.githubusercontent.com/u/17565534?v=3&s=400)](https://github.com/hosenja)
+[![mohamed](https://avatars3.githubusercontent.com/u/17565537?v=3&s=400)](https://github.com/mohamadir)
+[![hosen](https://avatars0.githubusercontent.com/u/17565534?v=3&s=400)](https://github.com/hosenja)
 
 ##[Project schedule](https://calendar.google.com/calendar/embed?src=mohamdib%40gmail.com&ctz=Asia/Jerusalem)
