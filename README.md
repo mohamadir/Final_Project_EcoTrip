@@ -2,8 +2,8 @@
                                        אפליקציית WEB + MOBILE לניהול אטרקציות וטיולם בארץ
 ![ecotrip-w](https://user-images.githubusercontent.com/17565537/27345703-57908326-55f3-11e7-9ec7-954c9e5c03c2.jpg)
 
-
-![eco](https://user-images.githubusercontent.com/17565534/27374549-eca65cd4-5674-11e7-90df-6a65eaed927f.png)
+#מסכם לאפלקציה שעשינו
+![eco](https://user-images.githubusercontent.com/17565534/27374653-48b5c9ce-5675-11e7-85c8-e16472512c60.png)
 
 
 ##More Info :
