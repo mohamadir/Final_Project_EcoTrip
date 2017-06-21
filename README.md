@@ -1,9 +1,9 @@
 #                                                           ECO-TRIP	
-                                          אפליקציית WEB + MOBILE לניהול אטרקציות וטיולם בארץ
+                                       אפליקציית WEB + MOBILE לניהול אטרקציות וטיולם בארץ
 ![ecotrip-w](https://user-images.githubusercontent.com/17565537/27345703-57908326-55f3-11e7-9ec7-954c9e5c03c2.jpg)
 
-בפרויקט זה פיתחנו אפליקציית WEB   ב CROSS PLATFORM   אשר תתאים למשתמשי IOS  ו ANDROID , האפליקציה מאפשרת למשתמש לחפש אטרקציות לפי: 
 
+![eco](https://user-images.githubusercontent.com/17565534/27374237-c6ab858c-5673-11e7-82e8-1fad96626bde.png)
 
 
 ##More Info :
